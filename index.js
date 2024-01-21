@@ -16,8 +16,8 @@ const render = require("./src/page-template.js");
 const teamMembers = [];
 
 function getManagerInfo() {
-    return
-    prompt([
+
+   return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -48,83 +48,111 @@ function getManagerInfo() {
                 answers.officeNumber
             );
             teamMembers.push(manager);
+           askAgain ()
+        
         });
+
+
 }
 
 function getEngineerInfo() {
-    return
 
-    prompt([
+   return inquirer.prompt([
         {
-          type: 'input',
-          name: 'name',
-          message: "Enter the engineer's name:",
+            type: 'input',
+            name: 'name',
+            message: "Enter the engineer's name:",
         },
         {
-          type: 'input',
-          name: 'id',
-          message: "Enter the engineer's employee ID:",
+            type: 'input',
+            name: 'id',
+            message: "Enter the engineer's employee ID:",
         },
         {
-          type: 'input',
-          name: 'email',
-          message: "Enter the engineer's email address:",
+            type: 'input',
+            name: 'email',
+            message: "Enter the engineer's email address:",
         },
         {
-          type: 'input',
-          name: 'github',
-          message: "Enter the engineer's GitHub username:",
+            type: 'input',
+            name: 'github',
+            message: "Enter the engineer's GitHub username:",
         },
-      ])
-      .then((answers) => {
-        const engineer = new Engineer(
-          answers.name,
-          answers.id,
-          answers.email,
-          answers.github
-        );
-        teamMembers.push(engineer);
-      });
-  }
+    ])
+        .then((answers) => {
+            const engineer = new Engineer(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.github
+            );
+            teamMembers.push(engineer);
+            return askAgain()
+        });
+}
 
-  function getInternInfo() {
-    return 
-      prompt([
+function getInternInfo() {
+    return inquirer.prompt([
         {
-          type: 'input',
-          name: 'name',
-          message: "Enter the intern's name:",
+            type: 'input',
+            name: 'name',
+            message: "Enter the intern's name:",
         },
         {
-          type: 'input',
-          name: 'id',
-          message: "Enter the intern's employee ID:",
+            type: 'input',
+            name: 'id',
+            message: "Enter the intern's employee ID:",
         },
         {
-          type: 'input',
-          name: 'email',
-          message: "Enter the intern's email address:",
+            type: 'input',
+            name: 'email',
+            message: "Enter the intern's email address:",
         },
         {
-          type: 'input',
-          name: 'school',
-          message: "Enter the intern's school:",
+            type: 'input',
+            name: 'school',
+            message: "Enter the intern's school:",
         },
-      ])
-      .then((answers) => {
-        const intern = new Intern(
-          answers.name,
-          answers.id,
-          answers.email,
-          answers.school
-        );
-        teamMembers.push(intern);
-      });
-  }
-  
-
+    ])
+        .then((answers) => {
+            const intern = new Intern(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.school
+            );
+            teamMembers.push(intern);
+            return askAgain()
+        });
+}
 
 
+
+function askAgain () {
+return prompt([
+    {
+        type: 'list',
+        name: 'option',
+        message: "pick one of those:",
+        choices:["create engineer", "create intern", "build team"]
+}]
+
+).then(answer =>{
+    if(answer.option ==="create engineer"){
+        getEngineerInfo()
+    }else if(answer.option ==="create intern"){
+        getInternInfo()
+    }else{
+        return
+    }
+})
+}
+
+function start () {
+    getManagerInfo() 
+}
+
+start()
 
 
 
