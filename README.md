@@ -8,7 +8,7 @@
 * [License](#license)
 
   ## Introduction
-
+ We have received a set of initial code, and our objective was to convert it into a fully operational Node.js command-line application. The application is intended to gather information about members of a software engineering team through user input and that would generate an HTML webpage that presents summaries for each team member.
 
 
 ## Installation
@@ -18,10 +18,10 @@
   4. Open terminal and start application: node index.js
 
 
-  ![Example Screenshot 1]()
-  ![Example Screenshot 2]()
-  ![Example Screenshot 3]()
-  ![Example Screenshot 4]()
+  ![Example Screenshot 1](/Screenshots/Screenshot%201.png)
+  ![Example Screenshot 2](/Screenshots/Screenshot%202.png)
+  ![Example Screenshot 3](/Screenshots/Screenshot%203.png)
+  ![Example Screenshot 4](/Screenshots/Screenshot%204.png)
 
   # Resources 
 
@@ -50,7 +50,12 @@ If you have any questions or need assistance, feel free to reach out to me on my
 
   The tools that have been added in this project:
    
-   - ex
+   - When a user starts the application then they are prompted to enter the team manager’s
+   - When a user enters those requirements then the user is presented with a menu
+   - When a user selects the engineer option then a user is prompted to enter details then the user is taken back to the menu
+   - When a user selects the intern option then a user is prompted to enter then the user is taken back to the menu
+   - When a user decides to finish building their team then they exit the application, and the HTML is generated.
+
 
 
 > [!URL]
