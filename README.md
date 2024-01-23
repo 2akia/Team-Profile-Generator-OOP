@@ -19,8 +19,11 @@
 
 
   ![Example Screenshot 1](/Screenshots/Screenshot%201.png)
+
   ![Example Screenshot 2](/Screenshots/Screenshot%202.png)
+
   ![Example Screenshot 3](/Screenshots/Screenshot%203.png)
+  
   ![Example Screenshot 4](/Screenshots/Screenshot%204.png)
 
   # Resources 
@@ -38,6 +41,8 @@ Here are some useful resources related to this project:
 
 
  ## License
+
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
   This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 

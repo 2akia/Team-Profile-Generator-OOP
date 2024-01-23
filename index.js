@@ -51,8 +51,6 @@ function getManagerInfo() {
             askAgain()
 
         });
-
-
 }
 
 function getEngineerInfo() {
@@ -127,7 +125,6 @@ function getInternInfo() {
 }
 
 
-
 function askAgain() {
     return inquirer.prompt([
         {
@@ -139,17 +136,16 @@ function askAgain() {
 
     ).then(answer => {
         if (answer.option === "Add an engineer") {
-           return getEngineerInfo();
+            return getEngineerInfo();
         } else if (answer.option === "Add an intern") {
-          return getInternInfo();
+            return getInternInfo();
         } else {
             return buildTeam();
         }
     });
 }
 
-
-function buildTeam () {
+function buildTeam() {
     const htmlContent = render(teamMembers);
     fs.writeFileSync(outputPath, htmlContent);
 }
