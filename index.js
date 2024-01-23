@@ -134,23 +134,23 @@ function askAgain() {
             type: 'list',
             name: 'option',
             message: "pick one of those:",
-            choices: ["create engineer", "create intern", "build team"]
+            choices: ["Add an engineer", "Add an intern", "Finish building the team"]
         }]
 
     ).then(answer => {
         if (answer.option === "Add an engineer") {
-            getEngineerInfo()
+           return getEngineerInfo();
         } else if (answer.option === "Add an intern") {
-            getInternInfo()
+          return getInternInfo();
         } else {
             return buildTeam();
         }
-    })
+    });
 }
 
 
 function buildTeam () {
-    
+
 }
 
 function start() {
