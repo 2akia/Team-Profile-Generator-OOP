@@ -17,7 +17,7 @@ const teamMembers = [];
 
 function getManagerInfo() {
 
-   return inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -48,8 +48,8 @@ function getManagerInfo() {
                 answers.officeNumber
             );
             teamMembers.push(manager);
-           askAgain ()
-        
+            askAgain()
+
         });
 
 
@@ -57,7 +57,7 @@ function getManagerInfo() {
 
 function getEngineerInfo() {
 
-   return inquirer.prompt([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -128,28 +128,33 @@ function getInternInfo() {
 
 
 
-function askAgain () {
-return prompt([
-    {
-        type: 'list',
-        name: 'option',
-        message: "pick one of those:",
-        choices:["create engineer", "create intern", "build team"]
-}]
+function askAgain() {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'option',
+            message: "pick one of those:",
+            choices: ["create engineer", "create intern", "build team"]
+        }]
 
-).then(answer =>{
-    if(answer.option ==="create engineer"){
-        getEngineerInfo()
-    }else if(answer.option ==="create intern"){
-        getInternInfo()
-    }else{
-        return
-    }
-})
+    ).then(answer => {
+        if (answer.option === "Add an engineer") {
+            getEngineerInfo()
+        } else if (answer.option === "Add an intern") {
+            getInternInfo()
+        } else {
+            return buildTeam();
+        }
+    })
 }
 
-function start () {
-    getManagerInfo() 
+
+function buildTeam () {
+    
+}
+
+function start() {
+    getManagerInfo()
 }
 
 start()
