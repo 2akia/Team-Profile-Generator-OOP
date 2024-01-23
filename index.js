@@ -150,7 +150,8 @@ function askAgain() {
 
 
 function buildTeam () {
-
+    const htmlContent = render(teamMembers);
+    fs.writeFileSync(outputPath, htmlContent);
 }
 
 function start() {
